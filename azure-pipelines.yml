@@ -10,7 +10,7 @@ stages:
         scriptLocation: inlineScript
         inlineScript: |
 
-az group create --name $(environmentName) --location westeurope
+az group create --name $(environmentName) --location westeurope;
 
 az vm create 
   --name ProvisionedVM `
