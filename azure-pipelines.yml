@@ -5,15 +5,26 @@ stages:
     steps:
     - task: AzureCLI@2
       inputs:
-        azureSubscription: 'PRODUCTION'
+        azureSubscription: 'MyAzureServiceConnection'
         scriptType: pscore
         scriptLocation: inlineScript
         inlineScript: |
 
-az group create --name $(environmentName) --location westeurope;
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'MyAzureServiceConnection'
+    scriptType: 'pscore'
+    scriptLocation: 'inlineScript'
+    inlineScript: 'az group create --name $(environmentName) --location westeurope;'
 
-az vm create 
-  --name ProvisionedVM `
-  --image Win2019Datacenter `
-  --admin-password "$(adminPassword)"
-  --resource-group $(environmentName);
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'MyAzureServiceConnection'
+    scriptType: 'pscore'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      az vm create `
+        --name ProvisionedVM `
+        --image Win2019Datacenter `
+        --admin-password "$(adminPassword)"`
+        --resource-group $(environmentName);
