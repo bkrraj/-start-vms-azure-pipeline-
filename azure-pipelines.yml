@@ -9,7 +9,6 @@ stages:
         scriptType: pscore
         scriptLocation: inlineScript
         inlineScript: |
-steps:
 - task: AzureCLI@2
   inputs:
     azureSubscription: 'MyAzureServiceConnection'
