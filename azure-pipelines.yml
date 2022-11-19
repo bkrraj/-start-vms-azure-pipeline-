@@ -9,14 +9,12 @@ stages:
         scriptType: pscore
         scriptLocation: inlineScript
         inlineScript: |
-- task: AzureCLI@2
-  inputs:
+-
     azureSubscription: 'MyAzureServiceConnection'
     scriptType: 'pscore'
     scriptLocation: 'inlineScript'
     inlineScript: 'az group create --name $(environmentName) --location westeurope;'
-- task: AzureCLI@2
-  inputs:
+-
     azureSubscription: 'MyAzureServiceConnection'
     scriptType: 'pscore'
     scriptLocation: 'inlineScript'
