@@ -16,4 +16,4 @@ az vm create
   --name ProvisionedVM `
   --image Win2019Datacenter `
   --admin-password "$(adminPassword)"
-  --resource-group $(environmentName)
+  --resource-group $(environmentName);
