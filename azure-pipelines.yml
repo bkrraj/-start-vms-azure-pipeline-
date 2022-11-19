@@ -10,16 +10,11 @@ stages:
         scriptLocation: inlineScript
         inlineScript: |
 -
-    azureSubscription: 'MyAzureServiceConnection'
-    scriptType: 'pscore'
-    scriptLocation: 'inlineScript'
-    inlineScript: 'az group create --name $(environmentName) --location westeurope;'
--
-    azureSubscription: 'MyAzureServiceConnection'
-    scriptType: 'pscore'
-    scriptLocation: 'inlineScript'
-    inlineScript: |
-      az vm create `
+    
+
+   
+'az group create --name $(environmentName) --location westeurope;'
+az vm create `
         --name ProvisionedVM `
         --image Win2019Datacenter `
         --admin-password "$(adminPassword)"`
