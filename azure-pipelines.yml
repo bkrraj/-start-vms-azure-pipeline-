@@ -13,7 +13,7 @@ stages:
     
 
    
-'az group create --name $(environmentName) --location westeurope;'
+'az group create --name $(environmentName) --location westeurope;':
 az vm create `
         --name ProvisionedVM `
         --image Win2019Datacenter `
